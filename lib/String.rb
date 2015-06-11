@@ -1,5 +1,7 @@
-def string_shuffle str
-  str.split('').shuffle.join
+class String
+  def shuffle
+    self.split('').shuffle.join
+  end
 end
 
-p string_shuffle("hogefuga")
+p "hogefuga".shuffle
