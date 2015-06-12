@@ -1,3 +1,6 @@
 language: ruby
 rvm:
   - 2.2.2
+
+branches:
+except: /^(hello_app|toy_app).*$/
