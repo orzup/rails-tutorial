@@ -6,6 +6,7 @@
         <li><%= link_to "ホーム", root_path %></li>
         <li><%= link_to "ヘルプ", help_path %></li>
         <% if logged_in? %>
+          <li><%= link_to "ユーザー一覧", users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdaown-toggle" data-toggle="dropdown">
             アカウント <b class="caret"></b>

@@ -6,6 +6,11 @@ class UsersControllerTest < ActionController::TestCase
     @other_user = users(:archer)
   end
 
+  test "should redirect" do
+    get :index
+    assert_redirected_to login_url
+  end
+
   test "should get new" do
     get :new
     assert_response :success
