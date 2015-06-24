@@ -1,0 +1,9 @@
+<h1>サンプルアプリ</h1>
+
+<p><%= @user.name %> さま、</p>
+
+<p>サンプルアプリをご利用いただきありがとうございます。
+以下のURLをクリックしていただくと、本登録が完了します！
+</p>
+
+<%= link_to "本登録", edit_account_activation_url(@user.activation_token, email: @user.email) %>
