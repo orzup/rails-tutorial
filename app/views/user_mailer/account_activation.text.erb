@@ -1,0 +1,6 @@
+<%= @user.name %> さま、
+
+サンプルアプリをご利用いただきありがとうございます。
+以下のURLをクリックしていただくと、本登録が完了します！
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
