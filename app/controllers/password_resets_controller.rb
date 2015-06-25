@@ -14,7 +14,7 @@ class PasswordResetsController < ApplicationController
       flash[:info] = "パスワードをリセットしました。メールから再設定ができるので確認してみてください！"
       redirect_to root_url
     else
-      flash[:danger] = "残念ながら、メールアドレスが存在しません。"
+      flash.now[:danger] = "残念ながら、メールアドレスが存在しません。"
       render 'new'
     end
   end
@@ -24,7 +24,7 @@ class PasswordResetsController < ApplicationController
 
   def update
     if params[:user][:password].empty?
-      flash[:danger] = "パスワードを入力してください"
+      flash.now[:danger] = "パスワードを入力してください"
       render 'edit'
     elsif @user.update_attributes(user_params)
       log_in @user

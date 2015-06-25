@@ -76,4 +76,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+
+  host = 'dry-basin-4753.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.lolipop.jp',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['LOLIPOP_MAIL_USERNAME'],
+    :password       => ENV['LOLIPOP_MAIL_PASSWORD'],
+    :domain         => 'orzup.pw',
+    :enable_starttls_auto => true
+  }
 end
