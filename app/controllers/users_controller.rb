@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where(activated:true).paginate(page: params[:page])
-    p @users.count
   end
 
   def show
