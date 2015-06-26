@@ -13,7 +13,6 @@ class UsersShowTest < ActionDispatch::IntegrationTest
   end
 
   test "show as non-activated user" do
-    log_in_as(@non_activated)
     get user_path(@non_activated)
     assert_redirected_to root_url
     follow_redirect!
