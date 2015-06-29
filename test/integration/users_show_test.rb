@@ -18,4 +18,18 @@ class UsersShowTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_template 'static_pages/home'
   end
+
+  test "index including activated only" do
+    log_in_as(@activated)
+    get users_path
+    assert_template 'users/index'
+    assert_select 'div.pagination'
+    total_pages = assigns(:users).total_pages
+    (1..total_pages).each do |i|
+      get users_path, page: i
+      assigns(:users).each do |user|
+        assert user.activated?
+      end
+    end
+  end
 end
