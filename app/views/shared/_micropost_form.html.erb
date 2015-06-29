@@ -1,0 +1,7 @@
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "ʅ（´◔౪◔）ʃ" %>
+  </div>
+  <%= f.submit "投稿", class: "btn btn-primary" %>
+<% end %>
