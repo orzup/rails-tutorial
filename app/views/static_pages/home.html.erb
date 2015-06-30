@@ -1,29 +1,5 @@
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
-      <section class="micropost_form">
-        <%= render 'shared/micropost_form' %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-      <h3>フィード</h3>
-      <%= render 'shared/feed' %>
-    </div>
-  </div>
+  <%= render 'user_home' %>
 <% else %>
-  <div class="center jumbotron">
-    <h1>サンプルアプリへようこそ</h1>
-
-    <h2>
-      このホームページは<a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-      のためのサンプルアプリだよ。
-    </h2>
-
-    <%= link_to "ʅ（´◔౪◔）ʃ", signup_path, class: "btn btn-lg btn-primary" %>
-  </div>
-
-  <%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %>
+  <%= render 'signup' %>
 <% end %>
