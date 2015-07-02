@@ -5,7 +5,7 @@ class SiteHomeTest < ActionDispatch::IntegrationTest
     @user = users(:michael)
   end
 
-  test "layout stuts" do
+  test "layout stats" do
     log_in_as(@user)
     get root_path
     assert_match @user.following.count.to_s, response.body
