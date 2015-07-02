@@ -8,7 +8,8 @@ class SiteHomeTest < ActionDispatch::IntegrationTest
   test "layout stats" do
     log_in_as(@user)
     get root_path
-    assert_match @user.following.count.to_s, response.body
-    assert_match @user.followers.count.to_s, response.body
+    assert_select 'section.stats'
+    assert_select 'strong#following', @user.following.count.to_s
+    assert_select 'strong#followers', @user.followers.count.to_s
   end
 end
