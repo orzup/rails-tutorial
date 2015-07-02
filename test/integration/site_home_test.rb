@@ -5,15 +5,10 @@ class SiteHomeTest < ActionDispatch::IntegrationTest
     @user = users(:michael)
   end
 
-  test "show feeds" do
+  test "layout stuts" do
     log_in_as(@user)
     get root_path
-    total_pages = assigns(:feed_items).total_pages
-    (1..total_pages).each do |i|
-      get root_path, page: i
-      assigns(:feed_items).each do |feed_item|
-        assert (@user == feed_item.user || @user.following.include?(feed_item.user))
-      end
-    end
+    assert_match @user.following.count.to_s, response.body
+    assert_match @user.followers.count.to_s, response.body
   end
 end
