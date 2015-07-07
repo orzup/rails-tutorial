@@ -8,6 +8,7 @@ gem 'faker', '1.4.2'
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
 gem 'fog', '1.23.0'
+gem 'mysql2'
 gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 # Use SCSS for stylesheets
@@ -40,7 +41,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  # gem 'sqlite3'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -60,7 +61,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.17.1'
+  # gem 'pg', '0.17.1'
   gem 'rails_12factor', '0.0.2'
   gem 'puma', '2.11.1'
 end
