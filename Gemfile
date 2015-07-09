@@ -54,6 +54,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'sqlite3'
   gem 'minitest-line'
   gem 'minitest-reporters', '1.0.5'
   gem 'mini_backtrace', '0.1.3'
@@ -61,7 +62,6 @@ group :test do
 end
 
 group :production do
-  # gem 'pg', '0.17.1'
   gem 'rails_12factor', '0.0.2'
   gem 'puma', '2.11.1'
 end
