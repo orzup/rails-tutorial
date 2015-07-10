@@ -2,8 +2,8 @@ worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
 timeout 15
 preload_app true
 
-listen "tmp/sockets/unicorn.sock"
-pid "tmp/pids/unicorn.pid"
+listen "/srv/rails-tutorial/tmp/sockets/unicorn.sock"
+pid "/srv/rails-tutorial/tmp/pids/unicorn.pid"
 
 before_fork do |server, worker|
   Signal.trap 'TERM' do
@@ -24,5 +24,5 @@ after_fork do |server, worker|
     ActiveRecord::Base.establish_connection
 end
 
-stderr_path "log/unicorn.stderr.log"
-stdout_path "log/unicorn.stdout.log"
+stderr_path "/srv/rails-tutorial/log/unicorn.stderr.log"
+stdout_path "/srv/rails-tutorial/log/unicorn.stdout.log"
