@@ -80,7 +80,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
 
-  host = 'dry-basin-4753.herokuapp.com'
+  host = 'localhost:8080'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.lolipop.jp',
